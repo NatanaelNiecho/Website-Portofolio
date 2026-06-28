@@ -158,7 +158,7 @@
         .badge:hover {
             background: #22C55E;
             color: #000;
-            transform: sacle(1.1);
+            transform: translateY(-5px) Scale(1.05);
             box-shadow: 0 0 15px #22c55e;
             animation: neonglow 1s infinite alternate;
         }
@@ -210,12 +210,13 @@
             background: #1e40af;
         }
 
-        .progress-bar: {
+        .progress-bar {
             animation: loadBar 2s ease Forwards;
         }
         @keyframes loadBar {
-            width: 0;
+            from { width: 0;} 
         }
+        
     </style>
 </head>
 
