@@ -148,18 +148,19 @@
         }
 
         .badge {
-            background: #1f2937;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            transition: 0.3s;
+            transition: all 0.3s ease; 
+            background: linear-gradient(135deg, #1f2937, #111827);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 0 12px rgba(74, 222, 128, 0.4);
         }
 
         .badge:hover {
+            color: #d1fae5;
             background: #22C55E;
             color: #000;
-            transform: translateY(-5px) Scale(1.05);
-            box-shadow: 0 0 15px #22c55e;
+            transform: translateY(-3px);
+            box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
             animation: neonglow 1s infinite alternate;
         }
 
