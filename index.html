@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
     <title>Portfolio Niecho</title>
 
     <style>
@@ -12,104 +13,43 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: radial-gradient(circle at top,#0f172a, #020617);
+            background: linear-gradient(135deg, #020617, #0f172a);
             color: #E5E7EB;
         }
 
         .container {
-            animation: fadeIn 1s ease-in;
             max-width: 900px;
-            margin: 50px auto;
+            margin: auto;
             padding: 20px;
         }
 
+        /* CARD (FIX: NO GLOW) */
         .card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.05);
-            background: #111827;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            margin-bottom: 25px;
-            transition: 0.3s;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: none; /* 🔥 FIX glow */
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            transition: 0.3s;
+        h2 {
+            margin-bottom: 15px;
+            border-left: 4px solid #22c55e;
+            padding-left: 10px;
         }
 
+        /* HEADER */
         .header {
             text-align: center;
         }
 
         .header img {
-            filter: brightness(0.8);
-            animation: neonglow 2s infinite alternate;
-            width: 180px;
-            height:180px;
-            object-fit:cover;
+            width: 120px;
             border-radius: 50%;
-            border: 3px solid #22C55E;
-            box-shadow:0 0 20px rgba(34,197,94,0.6);
-            margin-bottom: 15px;
-            transition: 0.3s;
-
-
-
-            box-shadow:
-                0 0 10px #22c55e,
-                0 0 20px #22c55e,
-                0 0 30px #22c55e,
-                0 0 80px rgba(34,197,94,0.6s);
+            margin-bottom: 10px;
         }
 
-        .header img:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
-        }
-
-        .header img {
-            transition: 0.3s;
-        }
-
-        h1 {
-            filter: blur(0.3px);
-            color: #22C55E;
-            text-shadow: 
-                0 0 5px #22c55e,
-                0 0 10px #22c55e, 
-                0 0 20px #22c55e,
-                0 0 40px #22c55e,
-                0 0 80px #22c55e;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            margin-bottom: 15px;
-            border-left: 4px solid #22C55E;
-            padding-left: 10px;
-        }
-
-        p {
-            margin: 6px 0;
-            color: #D1D5DB;
-        }
-
-        strong {
-            color: #fff;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        /* 🔥 Skill Bar */
+        /* SKILL BAR */
         .skill {
             margin-bottom: 15px;
         }
@@ -119,134 +59,61 @@
         }
 
         .bar {
-            background: #1f2937;
+            background: #0f172a;
             border-radius: 10px;
             overflow: hidden;
+            height: 10px;
         }
+
+        .progress {
+            height: 10px;
+            background: linear-gradient(90deg, #22c55e, #38bdf8);
+            width: 0;
+            animation: loadBar 2s ease forwards;
+        }
+
+        @keyframes loadBar {
+            from { width: 0; }
+        }
+
+        /* SOFT SKILL (FIX TOTAL) */
         .soft-skill {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 10px;
         }
+
         .soft-skill span {
             padding: 8px 15px;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            color: #e5e7eb;
-            box-shadow: none;
+            background: rgba(255,255,255,0.05);
             transition: 0.3s;
         }
+
         .soft-skill span:hover {
             background: #22c55e;
             color: #022c22;
             transform: scale(1.05);
         }
 
-        .fill {
-            height: 10px;
-            background: #2563eb;
-            border-radius: 5px;
-            animation: loadBar 2s ease forwards;
+        /* ANIMASI MUNCUL */
+        .card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease forwards;
         }
 
-        .fill.excel { width: 90%; }
-        .fill.erp { width: 80%; }
-        .fill.data { width: 75%; }
-        .fill.code { width: 60%; }
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
 
-        @keyframes fillAnim {
-            from { width: 0; }
-        }
-
-        /* 🔥 Grid Soft Skill */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .badge {
-            transition: all 0.3s ease; 
-            background: linear-gradient(135deg, #1f2937, #111827);
-            color: #000;
-            transform: translateY(-3px);
-            box-shadow: 0 0 12px rgba(74, 222, 128, 0.4);
-        }
-
-        .badge:hover {
-            color: #d1fae5;
-            background: #22C55E;
-            color: #000;
-            transform: translateY(-3px);
-            box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
-            animation: neonglow 1s infinite alternate;
-        }
-
-        .about {
-            line-height: 1.6;
-        }
-
-        @keyframes neonglow {
-            0% {
-                box-shadow: 0 0 10px #22c55e;
-            }
-            50% {
-                box-shadow: 0 0 30px #22c55e, 0 0 60px #22c55e;
-            }
-            100% {
-                box-shadow: 0 0 10px #22c55e;
-            }
-        .container:hover {
-            transform: scale(1.01);
-            transition: 0.3s;
-        }
-        .li:hover {
-            color: #2563eb;
-            cursor: pointer;
-            transform: translateY(5px);
-            transition: 0.2s;
-        }
         @keyframes fadeIn {
-            from {
-                opacity: (0)
-                transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #2563eb;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 15px;
-        }
-        .btm:hover {
-            background: #1e40af;
-        }
-
-        .progress-bar {
-            animation: loadBar 2s ease Forwards;
-        }
-        @keyframes loadBar {
-            from { width: 0;} 
-        }
-        .soft-skill,
-.soft-skill div,
-.soft-skill span {
-    box-shadow: none !important;
-    text-shadow: none !important;
-    filter: none !important;
-    backdrop-filter: none !important;
-}
-* {
-    background: none !important;
-}
     </style>
 </head>
 
@@ -256,18 +123,9 @@
 
     <!-- HEADER -->
     <div class="card header">
-        <img src="WhatsApp Image 2026-06-22 at 16.08.31.jpeg">
+        <img src="https://via.placeholder.com/120" alt="profile">
         <h1>Niecho Natanael</h1>
         <p>PPIC Manager | Future Web Developer</p>
-    </div>
-
-    <!-- DATA DIRI -->
-    <div class="card">
-        <p><strong>Umur:</strong> 23 Tahun</p>
-        <p><strong>Lokasi:</strong> Bogor, Jawa Barat</p>
-        <p><strong>pendidikan:</strong> SMA Mardi Yuana</p>
-        <p><strong>Jurusan:</strong> IPS</p>
-        <p><strong>Target:</strong> Web Developer</p>
     </div>
 
     <!-- HARD SKILL -->
@@ -275,55 +133,50 @@
         <h2>Hard Skill</h2>
 
         <div class="skill">
-            <div class="skill-name">Microsoft Excel</div>
-            <div class="bar"><div class="fill excel"></div></div>
-        </div>
-
-        <div class="skill">
             <div class="skill-name">ERP System</div>
-            <div class="bar"><div class="fill erp"></div></div>
+            <div class="bar">
+                <div class="progress" style="width: 85%"></div>
+            </div>
         </div>
 
         <div class="skill">
             <div class="skill-name">Data Analysis</div>
-            <div class="bar"><div class="fill data"></div></div>
+            <div class="bar">
+                <div class="progress" style="width: 80%"></div>
+            </div>
         </div>
 
         <div class="skill">
             <div class="skill-name">Programming</div>
-            <div class="bar"><div class="fill code"></div></div>
+            <div class="bar">
+                <div class="progress" style="width: 75%"></div>
+            </div>
         </div>
-
     </div>
 
     <!-- SOFT SKILL -->
     <div class="card">
         <h2>Soft Skill</h2>
 
-        <div class="grid">
-            <div class="badge">Problem Solving</div>
-            <div class="badge">Communication</div>
-            <div class="badge">Time Management</div>
-            <div class="badge">Leadership</div>
+        <div class="soft-skill">
+            <span>Problem Solving</span>
+            <span>Communication</span>
+            <span>Time Management</span>
+            <span>Leadership</span>
         </div>
     </div>
 
     <!-- ABOUT -->
-    <div class="card about">
+    <div class="card">
         <h2>Tentang Saya</h2>
         <p>
-            Saya adalah seorang PPIC Manager yang memiliki ketertarikan besar dalam dunia teknologi,
-            khususnya Web Development. Saat ini saya sedang fokus belajar HTML, CSS, dan akan terus
-            berkembang menjadi Web Developer profesional.
+            Saya adalah seorang PPIC Manager yang memiliki ketertarikan besar dalam dunia teknologi, 
+            khususnya Web Development. Saat ini saya sedang fokus belajar HTML, CSS, dan akan terus berkembang 
+            menjadi Developer profesional.
         </p>
     </div>
 
 </div>
-<script>
-function showmessage () {
-    alert("Terima Kasih Sudah Mengunjungi Portofolio Saya!");
-}
-</script>    
 
 </body>
 </html>
