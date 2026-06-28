@@ -12,7 +12,7 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #020617, #0f172a);
+            background: radial-gradient(circle at top,#0f172a, #020617);
             color: #E5E7EB;
         }
 
@@ -23,6 +23,7 @@
         }
 
         .card {
+            border: 1px solid rgba(255,255,255,0.05);
             background: #111827;
             border-radius: 16px;
             padding: 30px;
@@ -33,6 +34,7 @@
 
         .card:hover {
             transform: translateY(-5px);
+            transition: 0.3s;
         }
 
         .header {
