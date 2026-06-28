@@ -24,6 +24,7 @@
         }
 
         .card {
+            transition: all 0.3s ease;
             border: 1px solid rgba(255,255,255,0.05);
             background: #111827;
             border-radius: 16px;
@@ -34,7 +35,8 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
 
@@ -207,7 +209,13 @@
         .btm: hover {
             background: #1e40af;
         }
-        
+
+        .progress-bar: {
+            animation: loadBar 2s ease Forwards;
+        }
+        @keyframes loadBar {
+            width: 0;
+        }
     </style>
 </head>
 
