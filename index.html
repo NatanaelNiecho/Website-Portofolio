@@ -5,6 +5,11 @@
 
   <style>
     body {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-heigth:100vh;
+      margin:0;
       font-family: Arial, sans-serif;
       background-color: #020617;
       color:#e5e7eb;
@@ -14,10 +19,12 @@
 
     .container {
       width: 70%
+      max-width:800px;
+      text-align:center;
       margin: 40px auto;
       background:#111827;
       bacground-filter:blur(10px);
-      padding: 25px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       transform:translateY(-5px);
@@ -42,11 +49,15 @@
     }
 
     ul, ol {
+      text align:left;
+      display:inline-block;
       margin-left: 20px;
       color:#ffffff;
     }
 
     img {
+      display:block;
+      margin:20px;
       margin-top: 15px;
       border-radius: 50%;
       border: 3px solid #22c55e;
