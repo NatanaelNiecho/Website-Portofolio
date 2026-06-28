@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Website Profil Niecho</title>
+    <title>Portfolio Niecho</title>
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #020617;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #020617, #0f172a);
             color: #E5E7EB;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 50px auto;
+            padding: 20px;
+        }
+
+        .card {
             background: #111827;
+            border-radius: 16px;
             padding: 30px;
-            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .header img {
             width: 120px;
             border-radius: 50%;
-            margin-bottom: 10px;
+            border: 3px solid #22C55E;
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -36,83 +52,149 @@
         }
 
         h2 {
-            border-bottom: 1px solid #374151;
-            padding-bottom: 5px;
             margin-bottom: 15px;
+            border-left: 4px solid #22C55E;
+            padding-left: 10px;
         }
 
         p {
-            margin: 8px 0;
+            margin: 6px 0;
             color: #D1D5DB;
         }
 
         strong {
-            color: #FFFFFF;
-        }
-
-        .section {
-            margin-bottom: 25px;
+            color: #fff;
         }
 
         ul {
-            padding-left: 20px;
-            margin: 0;
+            list-style: none;
         }
 
         li {
-            margin: 5px 0;
+            margin: 10px 0;
+        }
+
+        /* 🔥 Skill Bar */
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            margin-bottom: 5px;
+        }
+
+        .bar {
+            background: #1f2937;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 10px;
+            background: #22C55E;
+            width: 0;
+            animation: fillAnim 2s forwards;
+        }
+
+        .fill.excel { width: 90%; }
+        .fill.erp { width: 80%; }
+        .fill.data { width: 75%; }
+        .fill.code { width: 60%; }
+
+        @keyframes fillAnim {
+            from { width: 0; }
+        }
+
+        /* 🔥 Grid Soft Skill */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .badge {
+            background: #1f2937;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .badge:hover {
+            background: #22C55E;
+            color: #000;
         }
 
         .about {
             line-height: 1.6;
         }
-    </style>
 
+    </style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <div class="header">
-        <h1>Halo, Saya Niecho</h1>
+    <!-- HEADER -->
+    <div class="card header">
+        <img src="foto.jpg">
+        <h1>Niecho Natanael</h1>
         <p>PPIC Manager | Future Web Developer</p>
-        <img src="foto.jpg" alt="Foto Profil">
     </div>
 
-    <div class="section">
-        <p><strong>Nama:</strong> Niecho Natanael</p>
+    <!-- DATA DIRI -->
+    <div class="card">
         <p><strong>Umur:</strong> 23 Tahun</p>
-        <p><strong>Tempat Tinggal:</strong> Bogor, Jawa Barat</p>
-        <p><strong>Target:</strong> Menjadi Web Developer</p>
+        <p><strong>Lokasi:</strong> Bogor, Jawa Barat</p>
+        <p><strong>Target:</strong> Web Developer</p>
     </div>
 
-    <div class="section">
+    <!-- HARD SKILL -->
+    <div class="card">
         <h2>Hard Skill</h2>
-        <ul>
-            <li>ERP System</li>
-            <li>Microsoft Excel</li>
-            <li>Data Analysis</li>
-            <li>Basic Programming</li>
-        </ul>
+
+        <div class="skill">
+            <div class="skill-name">Microsoft Excel</div>
+            <div class="bar"><div class="fill excel"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">ERP System</div>
+            <div class="bar"><div class="fill erp"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Data Analysis</div>
+            <div class="bar"><div class="fill data"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Programming</div>
+            <div class="bar"><div class="fill code"></div></div>
+        </div>
+
     </div>
 
-    <div class="section">
+    <!-- SOFT SKILL -->
+    <div class="card">
         <h2>Soft Skill</h2>
-        <ul>
-            <li>Problem Solving</li>
-            <li>Communication</li>
-            <li>Time Management</li>
-            <li>Leadership</li>
-        </ul>
+
+        <div class="grid">
+            <div class="badge">Problem Solving</div>
+            <div class="badge">Communication</div>
+            <div class="badge">Time Management</div>
+            <div class="badge">Leadership</div>
+        </div>
     </div>
 
-    <div class="section about">
+    <!-- ABOUT -->
+    <div class="card about">
         <h2>Tentang Saya</h2>
         <p>
-            Saya adalah seorang PPIC Manager yang memiliki ketertarikan dalam dunia teknologi,
-            khususnya Web Development. Saat ini saya sedang belajar HTML, CSS, dan akan berkembang
-            menjadi Web Developer profesional.
+            Saya adalah seorang PPIC Manager yang memiliki ketertarikan besar dalam dunia teknologi,
+            khususnya Web Development. Saat ini saya sedang fokus belajar HTML, CSS, dan akan terus
+            berkembang menjadi Web Developer profesional.
         </p>
     </div>
 
