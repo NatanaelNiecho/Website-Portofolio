@@ -98,8 +98,6 @@
 
         /* ANIMASI MUNCUL */
         .card {
-            transition: 0.3s ease;
-            cursor: pointer; 
             opacity: 0;
             transform: translateY(30px);
             animation: fadeIn 1s ease forwards;
@@ -108,10 +106,6 @@
         .card:nth-child(1) { animation-delay: 0.2s; }
         .card:nth-child(2) { animation-delay: 0.4s; }
         .card:nth-child(3) { animation-delay: 0.6s; }
-
-        .card:hover { 
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 
         @keyframes fadeIn {
             to {
