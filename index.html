@@ -1,213 +1,404 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Niecho Natanael</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Web Developer</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #020617, #0f172a);
-            color: #E5E7EB;
-        }
+<style>
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        /* CARD (FIX: NO GLOW) */
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: none; /* 🔥 FIX glow */
-        }
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#fff;
+}
 
-        h2 {
-            margin-bottom: 15px;
-            border-left: 4px solid #22c55e;
-            padding-left: 10px;
-        }
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0f172a;
+    z-index:1000;
+}
 
-        /* HEADER */
-        .header {
-            text-align: center;
-        }
+.logo{
+    font-size:28px;
+    color:#38bdf8;
+    font-weight:bold;
+}
 
-        .header img {
-            width: 120px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
 
-        /* SKILL BAR */
-        .skill {
-            margin-bottom: 15px;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        .skill-name {
-            margin-bottom: 5px;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:30px;
+}
 
-        .bar {
-            background: #0f172a;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 10px;
-        }
+.hero img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    margin-bottom:20px;
+}
 
-        .progress {
-            height: 10px;
-            background: linear-gradient(90deg, #22c55e, #38bdf8);
-            width: 0;
-            animation: loadBar 2s ease forwards;
-        }
+.hero h1{
+    font-size:60px;
+}
 
-        @keyframes loadBar {
-            from { width: 0; }
-        }
+.hero span{
+    color:#38bdf8;
+}
 
-        /* SOFT SKILL (FIX TOTAL) */
-        .soft-skill {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.hero p{
+    color:#cbd5e1;
+    margin-top:20px;
+    max-width:700px;
+}
 
-        .soft-skill span {
-            padding: 8px 15px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.05);
-            transition: 0.3s;
-        }
+.button{
+    margin-top:35px;
+}
 
-        .soft-skill span:hover {
-            background: #22c55e;
-            color: #022c22;
-            transform: scale(1.05);
-        }
+.button a{
+    display:inline-block;
+    padding:14px 30px;
+    margin:10px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
 
-        /* ANIMASI MUNCUL */
-        .card {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 1s ease forwards;
-        }
+.btn1{
+    background:#38bdf8;
+    color:#000;
+}
 
-        .card:nth-child(1) { animation-delay: 0.2s; }
-        .card:nth-child(2) { animation-delay: 0.4s; }
-        .card:nth-child(3) { animation-delay: 0.6s; }
+.btn2{
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+}
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%; 
-            object-fit: cover; 
-            margin-bottom: 15px; 
-            box-shadow:
-                0 0 10px #00ffff,
-                0 0 20px #00ffff,
-                0 0 40px #0ff;
-        }
-    </style>
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+}
+
+.about p{
+    text-align:center;
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    background:#38bdf8;
+    color:#000;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:10px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    display:inline-block;
+    margin:10px;
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:20px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+}
+
+</style>
+
 </head>
-
 <body>
-<div class="container">
 
-    <!-- HEADER -->
-    <div class="card header">
-        <img src="WhatsApp Image 2026-06-22 at 16.08.31.jpeg">
-        <h1>Niecho Natanael</h1>
-        <p>WareHouse Staff | Future Web Developer</p>
-    </div>
+<header>
 
-    <!-- HARD SKILL -->
-    <div class="card">
-        <h2>Hard Skill</h2>
+<div class="logo">Portfolio</div>
 
-        <div class="skill">
-            <div class="skill-name">ERP System</div>
-            <div class="bar">
-                <div class="progress" style="width: 85%"></div>
-            </div>
-        </div>
+<nav>
 
-        <div class="skill">
-            <div class="skill-name">Data Analysis</div>
-            <div class="bar">
-                <div class="progress" style="width: 80%"></div>
-            </div>
-        </div>
+<a href="#home">Home</a>
 
-        <div class="skill">
-            <div class="skill-name">Programming</div>
-            <div class="bar">
-                <div class="progress" style="width: 75%"></div>
-            </div>
-        </div>
-    </div>
+<a href="#about">About</a>
 
-    <!-- SOFT SKILL -->
-    <div class="card">
-        <h2>Soft Skill</h2>
+<a href="#skills">Skills</a>
 
-        <div class="soft-skill">
-            <span>Problem Solving</span>
-            <span>Communication</span>
-            <span>Time Management</span>
-            <span>Leadership</span>
-        </div>
-    </div>
+<a href="#projects">Projects</a>
 
-    <!-- ABOUT -->
-    <div class="card">
-        <h2>Tentang Saya</h2>
-        <p>
-            Saya adalah seorang Warehouse Staff yang memiliki ketertarikan besar dalam dunia teknologi, 
-            khususnya Web Development. Saat ini saya sedang fokus belajar HTML, CSS, dan akan terus berkembang sampai bisa 
-            menjadi seorang Web Developer profesional.
-        </p>
-    </div> 
+<a href="#contact">Contact</a>
 
-    <div class="card">
-        <h2>Pengalaman Kerja</h2> 
-        <p><b>Warehouse Supervisor</b></p>
-        <ul>
-            <li>Mengatur Keluar Dan Masuknya Barang</li>
-            <li>Memimpin Tim Gudang</li>
-            <li>Kontrol Stock</li>
-            <li>Menghindari Selisih atau Kehilangan Barang</li>
-            <li>Mengawasi Kinerja Staff</li>
-            <li>Memastikan Penerapan Sistem FIFO/FEFO</li>
-            <li>Membuat Laporan Stock Harian/Bulanan</li>
-            <li>Menginput Data Ke Sistem</li>
-        </ul>
-    </div>
-            
-    <div class="card">
-        <h2>Contact</h2>
-        <p>Gmail:</p>
-        <p>Instagram:</p>
-        <p>Whatsapp:</p>
-        <p>Linkedin:</p>
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<img src="https://i.pravatar.cc/300" alt="Profile">
+
+<h1>Halo, Saya <span>Nama Anda</span></h1>
+
+<h2 id="typing"></h2>
+
+<p>
+
+Saya adalah Web Developer yang fokus membangun website modern,
+responsive, cepat, dan menarik menggunakan HTML, CSS, JavaScript,
+PHP, Laravel, serta React.
+
+</p>
+
+<div class="button">
+
+<a href="#projects" class="btn1">Lihat Project</a>
+
+<a href="#" class="btn2">Download CV</a>
 
 </div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2 class="title">Tentang Saya</h2>
+
+<p>
+
+Saya memiliki minat dalam pengembangan website modern,
+UI/UX, dan aplikasi berbasis web.
+Saya selalu belajar teknologi baru untuk meningkatkan kemampuan.
+
+</p>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">HTML5</div>
+
+<div class="skill">CSS3</div>
+
+<div class="skill">JavaScript</div>
+
+<div class="skill">PHP</div>
+
+<div class="skill">Laravel</div>
+
+<div class="skill">MySQL</div>
+
+<div class="skill">React</div>
+
+<div class="skill">Git</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+
+<img src="https://picsum.photos/400/250?1">
+
+<div class="card-content">
+
+<h3>E-Commerce</h3>
+
+<p>Website toko online modern.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/400/250?2">
+
+<div class="card-content">
+
+<h3>Company Profile</h3>
+
+<p>Website perusahaan responsive.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/400/250?3">
+
+<div class="card-content">
+
+<h3>Dashboard Admin</h3>
+
+<p>Aplikasi dashboard berbasis web.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="title">Contact</h2>
+
+<p>Email: emailanda@gmail.com</p>
+
+<p>WhatsApp: 08xxxxxxxxxx</p>
+
+<a href="#">GitHub</a>
+
+<a href="#">LinkedIn</a>
+
+<a href="#">Instagram</a>
+
+</section>
+
+<footer>
+
+© 2026 Portfolio Web Developer
+
+</footer>
+
+<script>
+
+const text="Full Stack Web Developer";
+
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,80);
+
+}
+
+}
+
+typing();
+
+</script>
 
 </body>
 </html>
